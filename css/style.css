@@ -120,11 +120,13 @@ section{
   bottom: -7px;
 }
 
+
 .time-line,.tests{
   display: flex;
   justify-content:space-around;
 	flex-wrap: wrap;
 }
+
 
 .test{
   width: calc(30% - 20px);
@@ -198,6 +200,20 @@ section{
     right: 0;
   }
 
+	.menu-toggler.active span:nth-child(1){
+    transform: rotate(-45deg);
+    top: 4px;
+  }
+
+  .menu-toggler.active span:nth-child(2){
+    opacity: 0;
+  }
+
+  .menu-toggler.active span:nth-child(3){
+    transform: rotate(45deg);
+    bottom: 14px;
+  }
+	
   .inner-width{
     max-width: 800px;
   }
