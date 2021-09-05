@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="Educaplay" version="1.0" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3" xmlns:imsss="http://www.imsglobal.org/xsd/imsss" xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://ltsc.ieee.org/xsd/LOM lom.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>CAM 1.3</schemaversion>
+  </metadata>
+  <organizations default="orgDfl">
+    <organization identifier="orgDfl" structure="hierarchical">
+      <title>Producción del conejo</title>
+      <item identifier="item1" isvisible="true" identifierref="videotest_7846510-produccion_del_conejo">
+        <title>Producción del conejo</title>
+        <adlcp:completionThreshold>0.8</adlcp:completionThreshold>
+       </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource type="webcontent" adlcp:scormtype="sco" identifier="videotest_7846510-produccion_del_conejo" href="index.html">
+      <file href="index.html" />
+    </resource>
+  </resources>
+</manifest>
