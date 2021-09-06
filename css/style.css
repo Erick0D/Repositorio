@@ -50,7 +50,7 @@
 .menu-toggler span{
   display: block;
   height: 3px;
-  background-color: #fff;
+  background-color: #000;
   margin: 6px 0;
   position: relative;
   transition: .3s linear;
