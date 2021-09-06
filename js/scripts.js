@@ -10,11 +10,5 @@ $(document).ready(function(){
     $(this).toggleClass("active");
     $(".navbar-menu").toggleClass("active");
   });
-
-  $(".tests").magnificPopup({
-    delegate: 'a',
-    type: 'image',
-    gallery:{enabled:true}
-  });
 });
 
