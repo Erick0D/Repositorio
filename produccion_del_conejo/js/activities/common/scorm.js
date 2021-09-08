@@ -1,6 +1,6 @@
 
 //API Adaptador para ADL SCORM 1.2 y ADL SCORM 2004 y Flash (ActionScript 3)
-//Este script implementa diferentes aspectos de comportamiento l贸gico com煤n de un SCO.
+//Este script implementa diferentes aspectos de comportamiento l骻ico com鷑 de un SCO.
 
 //======================================================================================================================
 
@@ -25,7 +25,7 @@ var adr_FechaInicilizacion=null;
 var adr_MaximosIntentosLocalizarAPI=50;
 var adr_VersionSCORM='2004';
 
-//variables para almacenar los nombres de las funciones del est谩ndar Scorm
+//variables para almacenar los nombres de las funciones del est醤dar Scorm
 var adr_API_Inicializar='';
 var adr_API_Finalizar='';
 var adr_API_Commit='';
@@ -37,14 +37,14 @@ var adr_API_variablesAUtilizar=null;
 
 //======================================================================================================================
 
-//Funci贸n para mostrar los errores
+//Funci髇 para mostrar los errores
 function adrMostrarError(error){
 	if (adr_ShowError){
 		alert(error);
 	}
 }
 
-//Funci贸n para iniciaizar las varibles a utilizar, estas varibles dependen de la versi贸n del Scorm a utilizar
+//Funci髇 para iniciaizar las varibles a utilizar, estas varibles dependen de la versi髇 del Scorm a utilizar
 function inicializarFunciones(){
 	if (adr_VersionSCORM=='1.2'){
 		//Funciones
@@ -67,13 +67,13 @@ function inicializarFunciones(){
 		adr_API_variablesAUtilizar['tiempo']=new Array();
 		adr_API_variablesAUtilizar['tiempo']['nombre']='cmi.core.session_time';
 		adr_API_variablesAUtilizar['tiempo']['funcion']='adrConvertirTiempo';
-		//Puntuaci贸n del alumno
+		//Puntuaci髇 del alumno
 		adr_API_variablesAUtilizar['resultado']=new Array();
 		adr_API_variablesAUtilizar['resultado']['nombre']='cmi.core.score.raw';
-		//Puntuaci贸n m谩xima
+		//Puntuaci髇 m醲ima
 		adr_API_variablesAUtilizar['maximo']=new Array();
 		adr_API_variablesAUtilizar['maximo']['nombre']='cmi.core.score.max';
-		//Puntuaci贸n m铆nima
+		//Puntuaci髇 m韓ima
 		adr_API_variablesAUtilizar['minimo']=new Array();
 		adr_API_variablesAUtilizar['minimo']['nombre']='cmi.core.score.min';
 	}
@@ -107,19 +107,19 @@ function inicializarFunciones(){
 		adr_API_variablesAUtilizar['tiempo']=new Array();
 		adr_API_variablesAUtilizar['tiempo']['nombre']='cmi.session_time';
 		adr_API_variablesAUtilizar['tiempo']['funcion']='adrConvertirTiempo';
-		//Puntuaci贸n del alumno
+		//Puntuaci髇 del alumno
 		adr_API_variablesAUtilizar['resultado']=new Array();
 		adr_API_variablesAUtilizar['resultado']['nombre']='cmi.score.raw';
-		//Puntuaci贸n m谩xima
+		//Puntuaci髇 m醲ima
 		adr_API_variablesAUtilizar['maximo']=new Array();
 		adr_API_variablesAUtilizar['maximo']['nombre']='cmi.score.max';
-		//Puntuaci贸n m铆nima
+		//Puntuaci髇 m韓ima
 		adr_API_variablesAUtilizar['minimo']=new Array();
 		adr_API_variablesAUtilizar['minimo']['nombre']='cmi.score.min';
 	}
 }
 
-//Funci贸n para comprobar si encuentra el Scorm y la versi贸n del mismo (1.2 o 2004)
+//Funci髇 para comprobar si encuentra el Scorm y la versi髇 del mismo (1.2 o 2004)
 function adrLocalizaAPI(win){
 	//Comprobar Scorm
 	while ((win.API == null) && (win.API_1484_11 == null) && (win.parent != null) && (win.parent != win)) {
@@ -130,7 +130,7 @@ function adrLocalizaAPI(win){
 		}
 		win = win.parent;
 	}
-	//Comprobar versi贸n
+	//Comprobar versi髇
 	if (win.API!= null){
 		adr_VersionSCORM='1.2';
 		return win.API;
@@ -142,12 +142,12 @@ function adrLocalizaAPI(win){
 	return null;
 }
 
-//Funci贸n para comprobar el estado de la API
+//Funci髇 para comprobar el estado de la API
 function APIOK(){
 	return ((typeof(adr_API)!= "undefined") && (adr_API != null));
 }
 
-//Funci贸n para inicilizar la sesi贸n
+//Funci髇 para inicilizar la sesi髇
 function adrInicializar(){
 	var resultado = true;
 	if (adr_Inicializado){
@@ -173,7 +173,7 @@ function adrInicializar(){
 	return true;
 }
 
-//Funci贸n para finalizar la sesi贸n
+//Funci髇 para finalizar la sesi髇
 function adrFinalizar() {
 	if ((APIOK()) && (adr_Finalizado == false)) {
 		resultado  = eval('adr_API.' + adr_API_Finalizar + '("");');
@@ -182,7 +182,7 @@ function adrFinalizar() {
 	return true;
 }
 
-//Funci贸n para pasar una variable y su valor a Scorm
+//Funci髇 para pasar una variable y su valor a Scorm
 function adrSetValue(variable,valor){
 	if (!APIOK()){
 		return false;
@@ -202,7 +202,7 @@ function adrSetValue(variable,valor){
 	return resultado;
 }
 
-//Funci贸n para obtener un valor de una variable Scorm
+//Funci髇 para obtener un valor de una variable Scorm
 function adrGetValue(variable){
 	if (!APIOK()){
 		return false;
@@ -214,7 +214,7 @@ function adrGetValue(variable){
 	return valor;
 }
 
-//Funci贸n para realizar el envio de datos al servidor
+//Funci髇 para realizar el envio de datos al servidor
 function adrCommit(){
 	if (!APIOK()){
 		return false;
@@ -223,7 +223,7 @@ function adrCommit(){
 	return resultado;
 }
 
-//Funci贸n para comprobar si la actividad ha sido superada con anterioridad
+//Funci髇 para comprobar si la actividad ha sido superada con anterioridad
 function adrComprobarEstado(){
 	if (!APIOK()){
 		return false;
@@ -236,7 +236,7 @@ function adrComprobarEstado(){
 	}
 }
 
-//Funci贸n para obtener el c贸digo de un error
+//Funci髇 para obtener el c骴igo de un error
 function adrGetLastError(codigo){
 	if (!APIOK()){
 		return false;
@@ -245,7 +245,7 @@ function adrGetLastError(codigo){
 	return resultado;
 }
 
-//Funci贸n para obtener el texto del error a partir de un c贸digo de error
+//Funci髇 para obtener el texto del error a partir de un c骴igo de error
 function adrGetErrorString(){
 	if (!APIOK()){
 		return false;
@@ -254,18 +254,18 @@ function adrGetErrorString(){
 	return resultado;
 }
 
-//Funci贸n para comprobar si se ha realizado el registro, en caso negativo realizarlo
+//Funci髇 para comprobar si se ha realizado el registro, en caso negativo realizarlo
 function comprobarRegistro()
 {
 	//LLamada al flash para comprobar si se ha registrado
 	/*Para realizar la llamada desde JavaScript a ActionScript hay que tener varias cosas en cuenta:
-		1- El nombre dado al objeto embebido en la p谩gina Web, en este caso el archivo .swf de nombre "actividad".
-		2- Modificar el par谩metro "allowScriptAccess" asign谩ndole el valor "always" para que se ejecute de forma correcta
+		1- El nombre dado al objeto embebido en la p醙ina Web, en este caso el archivo .swf de nombre "actividad".
+		2- Modificar el par醡etro "allowScriptAccess" asign醤dole el valor "always" para que se ejecute de forma correcta
 	*/
 	actividad.callJavaScript();
 }
 
-//Funci贸n para convertir el tiempo a un formato correcto, dependiendo de la versi贸n del Scorm
+//Funci髇 para convertir el tiempo a un formato correcto, dependiendo de la versi髇 del Scorm
 function adrConvertirTiempo(n){
 	if (adr_VersionSCORM=='1.2'){	
 		return MillisecondsToCMIDuration(n);
@@ -275,7 +275,7 @@ function adrConvertirTiempo(n){
 	}
 }
 
-//Funci贸n para convertir duraci贸n de milisegundos a formato 0000:00:00.00 (HHHH:MM:SS.SS)
+//Funci髇 para convertir duraci髇 de milisegundos a formato 0000:00:00.00 (HHHH:MM:SS.SS)
 function MillisecondsToCMIDuration(n) {
 	var hms = "";
 	var dtm = new Date();	dtm.setTime(n);
@@ -288,7 +288,7 @@ function MillisecondsToCMIDuration(n) {
 	return hms
 }
 
-//Funci贸n para convertir duraci贸n de milisegundos a formato PThHmMsS
+//Funci髇 para convertir duraci髇 de milisegundos a formato PThHmMsS
 function MillisecondsToCMIDuration2004(n) {
 	var hms = "";
 	var dtm = new Date();	dtm.setTime(n);
