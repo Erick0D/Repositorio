@@ -183,8 +183,8 @@ section {
 .subject .info {
     position: absolute;
     z-index: 2;
-    bottom: 40px;
-    left: 40px;
+    bottom: 30px;
+    left: 30px;
     color: #fff;
     transition: .4s linear;
     text-shadow: 1px 1px 10px black;
@@ -297,4 +297,14 @@ footer {
         width: 100%;
         text-align: center;
     }
+}
+@media screen and (max-width:512px){
+	.subject .info{
+		bottom: 10px;
+		left: 10px;
+	}
+	.tests .info{
+		bottom: 15px;
+		left: 15px;
+	}
 }
